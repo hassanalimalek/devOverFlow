@@ -1,8 +1,10 @@
 import React from "react";
-import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+// eslint-disable-next-line camelcase
 import { Inter, Space_Grotesk } from "next/font/google";
 import { Metadata } from "next";
+import "./globals.css";
+import { ThemeProvider } from "@/context/themeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,7 +31,11 @@ more.`,
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <ClerkProvider
       appearance={{
@@ -41,9 +47,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       }}
     >
       <html lang="en">
-        <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
-          {children}
-        </body>
+        <ThemeProvider>
+          <body className={`${inter.variable} ${spaceGrotesk.variable} `}>
+            {children}
+          </body>
+        </ThemeProvider>
       </html>
     </ClerkProvider>
   );
