@@ -57,7 +57,7 @@ px-4 py-3 !text-light-900"
               tags={question.tags}
               author={question.author}
               answers={question.answers}
-              upvotes={question.upvotes}
+              upVotes={question.upVotes}
               views={question.views}
               createdAt={question.createdAt}
             />

@@ -9,7 +9,7 @@ interface Props {
   title: string;
   tags: { _id: string; name: string }[];
   author: { _id: string; name: string; picture: string };
-  upvotes: number;
+  upVotes: Array<any>;
   views: number;
   answers: Array<object>;
   createdAt: Date;
@@ -20,7 +20,7 @@ const QuestionCard = ({
   title,
   tags,
   author,
-  upvotes,
+  upVotes,
   views,
   answers,
   createdAt,
@@ -63,8 +63,8 @@ const QuestionCard = ({
         />
         <Metric
           imgUrl="/assets/icons/like.svg"
-          alt="Upvotes"
-          value={formatAndDivideNumber(upvotes)}
+          alt="upVotes"
+          value={formatAndDivideNumber(upVotes?.length)}
           title=" Votes"
           textStyles="small-medium text-dark400_light800"
         />
@@ -78,7 +78,7 @@ const QuestionCard = ({
         <Metric
           imgUrl="/assets/icons/eye.svg"
           alt="eye"
-          value={formatAndDivideNumber(views)}
+          value={views ? formatAndDivideNumber(views) : 0}
           title=" Views"
           textStyles="small-medium text-dark400_light800"
         />

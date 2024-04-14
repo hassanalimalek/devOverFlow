@@ -32,6 +32,7 @@ interface Props {
 const Question = ({ type, mongoUserId, questionDetails }: Props) => {
   // Text Editor ref
   const editorRef = useRef(null);
+  console.log("reve mongoUserId", mongoUserId);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   console.log(" isSubmitting --<>", isSubmitting);
@@ -82,6 +83,7 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
          */
 
         console.log("create questions called @@@@");
+        console.log("mongoUserId -->", mongoUserId);
         await createQuestion({
           title: values.title,
           content: values.explanation,

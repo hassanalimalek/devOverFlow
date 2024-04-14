@@ -50,4 +50,5 @@ export const formatAndDivideNumber = (number: number): string => {
   } else {
     return `${number}`;
   }
+
 };

@@ -1,11 +1,12 @@
 import Question from "@/components/forms/questions";
 import { getUserById } from "@/lib/actions/user.action";
-// import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs";
 import React from "react";
 
 async function Index() {
-  // const { userId } = auth();
-  const userId = "ABC123";
+  const { userId } = auth();
+  console.log("userId @@@@@@", userId);
+  // const userId = "ABC123";
   console.log("user id -->", userId);
   const mongoUser = await getUserById({ userId });
   console.log("mongo user -->", mongoUser);
