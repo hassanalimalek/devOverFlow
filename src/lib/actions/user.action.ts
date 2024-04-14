@@ -1,6 +1,6 @@
 import User from "@/database/user.modal";
 import { connectToDatabase } from "../mongoose";
-import revalidatePath from "next/cache";
+import { revalidatePath } from "next/cache";
 import Question from "@/database/question.modal";
 
 export const getUserById = async (params: any) => {
@@ -66,17 +66,17 @@ export const deleteUser = async (params: any) => {
 
     const { clerkId } = params;
 
-    const user = User.findOneAndDelete({ clerkId });
+    const user: any = User.findOneAndDelete({ clerkId });
     if (!user) throw new Error("User not found");
 
     // Delete user from database, and questions and comments etc
 
-    const userQuestionIds = await Question.find({ author: user._id }).distinct(
-      "_id"
-    );
+    // const userQuestionIds = await Question.find({ author: user._id }).distinct(
+    //   "_id"
+    // );
 
     // Delete user questions
-    await Question.deleteMany({ author: user._id });
+    await Question.deleteMany({ author: user?._id });
 
     // TODO: Delete user answers,comments, etc
 
