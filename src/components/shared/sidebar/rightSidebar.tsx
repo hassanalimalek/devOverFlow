@@ -6,7 +6,7 @@ function RightSidebar() {
   return (
     <div
       className="
-  background-light900_dark200 light-border flex flex-col  border-2 border-red-500 p-6 pt-36 shadow-light-300 dark:shadow-none max-md:hidden md:w-[320px]"
+  background-light900_dark200 light-border flex flex-col    p-6 pt-36 shadow-light-300 dark:shadow-none max-md:hidden md:w-[320px]"
     >
       <div className="mb-20">
         <h2 className="h3-bold text-dark300_light900 ">Top Questions</h2>
