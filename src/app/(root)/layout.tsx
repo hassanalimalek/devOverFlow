@@ -1,6 +1,6 @@
-import Navbar from "@/components/navbar";
-import LeftSidebar from "@/components/sidebar/leftSidebar";
-import RightSidebar from "@/components/sidebar/rightSidebar";
+import Navbar from "@/components/shared/navbar";
+import LeftSidebar from "@/components/shared/sidebar/leftSidebar";
+import RightSidebar from "@/components/shared/sidebar/rightSidebar";
 import React from "react";
 
 export default function Layout({

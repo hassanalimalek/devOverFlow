@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSwitcher from "../../ThemeSwitcher";
 
 import { SignedIn, UserButton } from "@clerk/nextjs";
 import MobileNav from "./mobilenav";
