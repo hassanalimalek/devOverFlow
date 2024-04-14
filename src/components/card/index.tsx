@@ -47,7 +47,7 @@ const QuestionCard = ({
       </div>
       <div className="mt-3.5 flex flex-wrap gap-2">
         {tags.map((tag) => (
-          <RenderTag key={tag._id} _id={tag._id} name={tag.name} />
+          <RenderTag key={tag._id} _id={tag._id} name={tag?.name} />
         ))}
       </div>
 
@@ -55,9 +55,9 @@ const QuestionCard = ({
         <Metric
           imgUrl="/assets/icons/avatar.svg"
           alt="User"
-          value={author.name}
+          value={author?.name}
           title={` - asked ${getTimestamp(createdAt)}`}
-          href={`/profile/${author._id}`}
+          href={`/profile/${author?._id}`}
           isAuthor
           textStyles="body-medium text-dark400_light700"
         />
